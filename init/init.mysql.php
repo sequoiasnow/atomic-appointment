@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS <?php print DB_TABLE_PREFIX; ?>users;
+CREATE TABLE <?php print DB_TABLE_PREFIX; ?>users VALUES(
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    pass VARCHAR(65) NOT NULL,
+    PRIMARY KEY(id)
+);
