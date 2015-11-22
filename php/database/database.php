@@ -52,6 +52,17 @@ class Database {
     }
 
     /**
+     * Returns the table name with a prefix.
+     *
+     * @param string $name
+     *
+     * @return string
+     */
+    protected static function getTableName( $name ) {
+        return DB_TABLE_PREFIX . $name;
+    }
+
+    /**
      * Perform a mysqli query.
      *
      * @param string $query
@@ -76,7 +87,7 @@ class Database {
         // Start by preparing the query string...
         $query = 'SELECT ';
         $query .= implode( $what, ', ' ) . ' ';
-        $query .= 'FROM '. $which . ' ';
+        $query .= 'FROM '. self::getTableName( $which ) . ' ';
 
         if ( $where ) {
             // Create the where array.
@@ -110,7 +121,7 @@ class Database {
      */
     public static function insert( $table, $data ) {
         // Create the query string.
-        $query = 'INSERT INTO ' . $table . ' ';
+        $query = 'INSERT INTO ' . self::getTableName( $table ) . ' ';
         $query .= '(' . implode( array_keys( $data ), ', ' ) . ')' . ' ';
         $query .= 'VALUES (' . implode( array_values( $data ), ', ' ) . ')';
 
@@ -128,9 +139,9 @@ class Database {
      *
      * @return mysqli::result || false
      */
-    public static function update( $where, $table, $data ) {
+    public static function update( $table, $data, $where ) {
         // Create the query string.
-        $query = 'UPDATAE ' . $table . ' ';
+        $query = 'UPDATAE ' . self::getTableName( $table ) . ' ';
         $query .= 'SET ' . implode( self::makeArrayColVal( $data ), ', ' ) . ' ';
         $query .= 'WHERE ' . implode( self::makeArrayColVal( $where ), ', ' );
 
