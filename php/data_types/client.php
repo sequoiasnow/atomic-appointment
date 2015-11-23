@@ -26,18 +26,29 @@ class Client extends DataType {
     }
 
     /**
+     * Returns the appointment
+     */
+    public function getAppointment() {
+        $aid    = $this->getDataVar( 'appid' );
+        $result = Database::select( array( '*' ), Appointment::TableName, array( 'id' => $aid ) );
+
+        return isset( $result[0] ) ? $result[0] : null;
+    }
+
+    public function getAppointmentGroup() {
+        $agid   = $this->getAppointment()->getDataVar( 'appgroupid' );
+        $result = Database::select( array( '*' ), AppointmentGroup::TableName, array( 'id' => $agid ) );
+
+        return isset( $result[0] ) ? $result[0] : null;
+    }
+
+
+    /**
      * Get the user that has requested this client.
      */
     public function getUser() {
-        $uid = $this->getDataVar( 'user_id' );
+        $uid = $this->getAppointmentGroup()->getDataVar( 'userid' );
         return UserDatabase::getUser( array( 'id' => $uid ) );
-    }
-
-    /**
-     * Returns the appointment
-     */
-    public function getBaseSchedule() {
-        $aid = $this->getDataVar( 'schedule_id' );
     }
 
     /**

@@ -58,12 +58,12 @@ class UserDatabase extends Database {
      */
     public static function getClients( $user ) {
         $id = $user->getDataVal( 'id' );
-        $array = self::select( 'user_clients', array( '*' ), array( 'id' => $id ) );
+        $array = self::select( array( '*' ), 'user_clients', array( 'id' => $id ) );
 
         foreach ( $array as &$client ) {
             $client = new Client( $array );
         }
-        
+
         return $array;
     }
 }

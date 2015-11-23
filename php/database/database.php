@@ -170,7 +170,7 @@ class Database {
 
        $tableName = constant( get_class( $object ) . '::TableName'  );
 
-       if ( $id && count( self::select( $tableName, array( 'id' => $id ) ) ) ) {
+       if ( $id && count( self::select( array( '*' ), $tableName, array( 'id' => $id ) ) ) ) {
            self::update( 'users', $object->getData(), array( 'id' => $id ) );
            return $object;
        }

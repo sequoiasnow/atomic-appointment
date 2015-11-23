@@ -12,6 +12,8 @@ DROP TABLE IF EXISTS <?php print DB_TABLE_PREFIX . AppointmentGroup::TableName; 
 CREATE TABLE <?php print DB_TABLE_PREFIX . AppointmentGroup::TableName; ?> (
     id INT(11) NOT NULL AUTO_INCREMENT,
     userid INT(11) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
     PRIMARY KEY(id)
 );
 
@@ -19,6 +21,9 @@ DROP TABLE IF EXISTS <?php print DB_TABLE_PREFIX . Appointment::TableName; ?>;
 CREATE TABLE <?php print DB_TABLE_PREFIX . Appointment::TableName; ?> (
     id INT(11) NOT NULL AUTO_INCREMENT,
     appgroupid INT(11) NOT NULL,
+    maxclients INT(11) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
     PRIMARY KEY(id)
 );
 

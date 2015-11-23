@@ -14,22 +14,21 @@ require_once ROOT_DIR . '/config.php';
 // Allow requests to be made to the database...
 require_once ROOT_DIR . '/php/database/database.php';
 
-// Define wether the site is administrative.
-define( 'IS_ADMIN', call_user_func(function() {
-    if ( $_SESSION['USER_NAME'] ) {
-        // Check if a database user is in fact real.
-        $user = Database::getUser( array( 'name' ) => $_SESSION['USER_NAME'] );
-        if ( ! $user ) { return false; }
-
-        // Check if the user has the correct password.
-        return $user->password == $_SESSION['USER_PASSWORD'];
-    }
-    return false;
-}) );
-
-
-
+// Include information about the data types.
+require_once ROOT_DIR . '/php/data_types/datatype.php';
 
 include 'tmpl/header.php'; ?>
+
+
+    <?php
+    /**
+     * Determines the basis of the nature of the page.
+     *
+     * If the user is not logged in, create the initial login screen.
+     */
+    include 'tmpl/login.php';
+    ?>
+
+
 
 <?php include 'tmpl/footer.php'; ?>
