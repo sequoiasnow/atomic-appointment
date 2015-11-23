@@ -1,6 +1,7 @@
 <?php
 // Get some config files.
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../php/data_types/datatype.php';
 
 // Get the contents of the init mysql file.
 ob_start();

@@ -54,4 +54,11 @@ class DataType implements Data {
         return $this->_data;
     }
 
+    /**
+     * Saves the current
+     */
+    public function save() {
+        Database::save( $this );
+    }
+
 }

@@ -150,6 +150,38 @@ class Database {
 
         return $connection->query( $query );
     }
+
+    /**
+     * Saves a data type based off of its class name.
+     *
+     * If the object has an id then update else create a new instace of it.
+     *
+     * @param $object DataType
+     *
+     * @return DataType || false
+     */
+    public static function save( &$object ) {
+       // Check if the object has an id, if not save the object as a new and get
+       // its id. Ensure the id is valid.
+       $id = $object->getDataVar( 'id' );
+
+       // Get the table name from the user.
+       if ( ! defined( get_class( $object ) . '::TableName' ) ) { return false; }
+
+       $tableName = constant( get_class( $object ) . '::TableName'  );
+
+       if ( $id && count( self::select( $tableName, array( 'id' => $id ) ) ) ) {
+           self::update( 'users', $object->getData(), array( 'id' => $id ) );
+           return $object;
+       }
+       self::insert( 'users', $object->getData() );
+
+       // Change the id.
+       $object->setDataVar( 'id', ( self::getConnection() )->insert_id );
+
+       // Return the object in case that is necessary.
+       return $object;
+    }
 }
 
 /**

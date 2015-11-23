@@ -1,9 +1,22 @@
 <?php
 class User extends DataType {
+    const TableName = 'user';
+
     /**
-     * Saving the User to the userdatabe.
+     * Gets a user login.
      */
-    public function save() {
-        UserDatabase::saveUser( $this );
+    public static function getLoggedInUser( $email, $pass ) {
+        return UserDatabase::getUser( array(
+            'email' => $email,
+            'pass'  => hash( 'sha256', $pass );
+        ) );
     }
+
+    /**
+     * Get the users clients.
+     */
+    public function getClients() {
+        return UserDatabase::getClients( $this );
+    }
+
 }
