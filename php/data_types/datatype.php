@@ -1,5 +1,5 @@
 <?php
-class DataType implements Data {
+class DataType {
     // The data stored for this data type, all
     protected $_data = array();
 
@@ -62,3 +62,8 @@ class DataType implements Data {
     }
 
 }
+
+require_once 'user.php';
+require_once 'client.php';
+require_once 'appointment.php';
+require_once 'appointmentgroup.php';

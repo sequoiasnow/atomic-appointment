@@ -8,7 +8,7 @@ class Client extends DataType {
     const TableName = 'client';
 
     /**
-     *
+     * Constructs with potential that the client may not have a key.
      */
     public function __construct( $args ) {
         // Check if the arguments are singular.
@@ -20,7 +20,7 @@ class Client extends DataType {
         parent::__construct( $args );
 
         // Generate a new key for the item.
-        if ( ! $this->getDataVar( 'key' ) ) {
+        if ( ! $this->getDataVar( 'hash' ) ) {
             $this->generateNewKey();
         }
     }
@@ -30,8 +30,14 @@ class Client extends DataType {
      */
     public function getUser() {
         $uid = $this->getDataVar( 'user_id' );
+        return UserDatabase::getUser( array( 'id' => $uid ) );
+    }
 
-        return UserDatabase::getUser( array( 'id' => 'user_id' ) );
+    /**
+     * Returns the appointment
+     */
+    public function getBaseSchedule() {
+        $aid = $this->getDataVar( 'schedule_id' );
     }
 
     /**
@@ -39,7 +45,6 @@ class Client extends DataType {
      */
     public function generateNewKey() {
         $key = hash( 'sha256', uniqid( DB_TABLE_PREFIX ) );
-
-        $this->setDataVar( 'key', $key );
+        $this->setDataVar( 'hash', $key );
     }
 }

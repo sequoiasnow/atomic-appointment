@@ -9,5 +9,7 @@ include 'init.mysql.php';
 $mysql = ob_get_contents();
 ob_clean();
 
+file_put_contents( __DIR__ . '/temp.mysql', $mysql );
+
 // Execute the building of the mysql through exec
-print shell_exec( 'mysql -u ' . DB_USER . ' -p\'' . DB_PASS . '\' ' . DB_NAME . ' < ' . $mysql );
+echo shell_exec( 'mysql -u ' . DB_USER . ' -p\'' . DB_PASS . '\' ' . DB_NAME . ' < ' . __DIR__ . '/temp.mysql' );

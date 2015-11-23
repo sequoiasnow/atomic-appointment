@@ -8,7 +8,7 @@ class User extends DataType {
     public static function getLoggedInUser( $email, $pass ) {
         return UserDatabase::getUser( array(
             'email' => $email,
-            'pass'  => hash( 'sha256', $pass );
+            'pass'  => hash( 'sha256', $pass ),
         ) );
     }
 

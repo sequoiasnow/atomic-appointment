@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS ATOMIC_user;
+CREATE TABLE ATOMIC_user (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    pass VARCHAR(65) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS ATOMIC_appointment_group;
+CREATE TABLE ATOMIC_appointment_group (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    userid INT(11) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS ATOMIC_appointment;
+CREATE TABLE ATOMIC_appointment (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    appgroupid INT(11) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS ATOMIC_client;
+CREATE TABLE ATOMIC_client (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    appid INT(11),
+    email VARCHAR(255) NOT NULL,
+    hash VARCHAR(65) NOT NULL,
+    PRIMARY KEY(id)
+);
