@@ -6,6 +6,14 @@ var gulp       = require( 'gulp' ),
     babelify   = require( 'babelify' ),
     source     = require( 'vinyl-source-stream' );
 
+
+function swallowError( error ) {
+    // If you want details of the error in the console
+    console.log(error.toString());
+
+    this.emit('end');
+}
+
 gulp.task( 'js', function() {
     return browserify({
             entries: './js/main.js',
@@ -21,9 +29,10 @@ gulp.task( 'js', function() {
 gulp.task( 'compass' , function() {
   gulp.src( './scss/*.scss' )
     .pipe(compass({
-      css: 'stylesheets',
+      css: 'dist/css',
       sass: 'scss'
     }))
+    .on( 'error', swallowError )
     .pipe( gulp.dest( 'dist/css' ) );
 });
 

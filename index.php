@@ -17,7 +17,32 @@ require_once ROOT_DIR . '/php/database/database.php';
 // Include information about the data types.
 require_once ROOT_DIR . '/php/data_types/datatype.php';
 
-include 'tmpl/header.php'; ?>
+
+/**
+ * Determine the type of the page that is to be loaded.
+ *
+ * This is bassed off of user authentication as administrator or otherwise.
+ */
+$pageType = 'login';
+
+
+/**
+ * Allowes the inclusion of a file from the tmpl files.
+ *
+ * Any data provided will be passed as $args.
+ */
+$args = array();
+function includeTemplate( $file, $vars = array() ) {
+    global $args;
+    $oldArgs = $args;
+    $args = $vars;
+
+    include __DIR__ . "/tmpl/{$file}.php";
+
+    $args = $oldArgs;
+}
+
+includeTemplate( 'header', array( 'pageType' => $pageType ) ); ?>
 
 
     <?php
@@ -26,9 +51,9 @@ include 'tmpl/header.php'; ?>
      *
      * If the user is not logged in, create the initial login screen.
      */
-    include 'tmpl/login.php';
+    includeTemplate( 'login' )
     ?>
 
 
 
-<?php include 'tmpl/footer.php'; ?>
+<?php includeTemplate( 'footer' ); ?>

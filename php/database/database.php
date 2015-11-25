@@ -177,7 +177,8 @@ class Database {
        self::insert( 'users', $object->getData() );
 
        // Change the id.
-       $object->setDataVar( 'id', ( self::getConnection() )->insert_id );
+       $connection = self::getConnection();
+       $object->setDataVar( 'id', $connection->insert_id );
 
        // Return the object in case that is necessary.
        return $object;
@@ -188,3 +189,4 @@ class Database {
  * Include relevant extensions of the Database class.
  */
 require_once 'userdatabase.php';
+require_once 'clientdatabase.php';

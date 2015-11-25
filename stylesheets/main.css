@@ -1,0 +1,98 @@
+/*
+Error: Invalid CSS after "...h: 100% default": expected ";", was "!;"
+        on line 6 of /Users/sequoiasnow/Sites/atomic-appointment/scss/components/_logo.scss
+        from line 1 of /Users/sequoiasnow/Sites/atomic-appointment/scss/components/_all.scss
+        from line 3 of /Users/sequoiasnow/Sites/atomic-appointment/scss/main.scss
+
+1: /* Style to be centered in container. *\/
+2: .logo {
+3:     margin-left: auto;
+4:     margin-right: auto;
+5: 
+6:     width: 100% default!;
+7:     height: 100%;
+8: }
+9: 
+10: /* Position the rings *\/
+11: .logo {
+
+Backtrace:
+/Users/sequoiasnow/Sites/atomic-appointment/scss/components/_logo.scss:6
+/Users/sequoiasnow/Sites/atomic-appointment/scss/components/_all.scss:1
+/Users/sequoiasnow/Sites/atomic-appointment/scss/main.scss:3
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:757:in `block in try_declaration'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1137:in `call'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1137:in `rethrow'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:762:in `try_declaration'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:692:in `declaration_or_ruleset'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:631:in `ruleset'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:646:in `block_contents'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:309:in `to_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `block in with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `map'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `block in with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:20:in `render'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:278:in `render'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `call'
+/usr/local/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+/usr/local/bin/compass:23:in `load'
+/usr/local/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...h: 100% default\": expected \";\", was \"!;\"\A         on line 6 of /Users/sequoiasnow/Sites/atomic-appointment/scss/components/_logo.scss\A         from line 1 of /Users/sequoiasnow/Sites/atomic-appointment/scss/components/_all.scss\A         from line 3 of /Users/sequoiasnow/Sites/atomic-appointment/scss/main.scss\A \A 1: /* Style to be centered in container. */\A 2: .logo {\A 3:     margin-left: auto;\A 4:     margin-right: auto;\A 5: \A 6:     width: 100% default!;\A 7:     height: 100%;\A 8: }\A 9: \A 10: /* Position the rings */\A 11: .logo {"; }

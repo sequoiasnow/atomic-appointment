@@ -5,6 +5,11 @@
  * Is the header of the page, comes before the content and contains is as
  * a basic html structure.
  */
+
+if ( $args ) {
+    extract( $args );
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,4 +21,4 @@
         <!-- css -->
         <link rel="stylesheet" type="text/css" href="dist/css/main.css" />
     </head>
-    <body>
+    <body class="<?php echo $pageType; ?>">
